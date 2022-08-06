@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <title>Aula 1.2 interface MouseEvent - click</title>
+
+    <style>
+        .selected {
+            background-color: blue;
+        }
+
+        li {
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+    Selecione os itens da lista:
+    <br />
+    <ul id="u">
+        <li>Desenvolvimento JS</li>
+        <li>Arquitetura de app web</li>
+        <li>Banco de dados</li>
+        <li>Introdução ao desenvolvimento web</li>
+        <li>Desenvolvimento backend</li>
+    </ul>
+</body>
+
+<script>
+    let list = document.getElementById("u");
+
+    list.addEventListener('click', selectItem);
+
+    function selectItem(e) {
+        if (e.target.tagName != "LI") {
+            return;
+        };
+
+        if (e.ctrlKey || e.metaKey) {
+            toggleSelect(e.target);
+        } else {
+            singleSelect(e.target);
+        }
+    }
+
+    function toggleSelect(li) {
+        li.classList.add('selected')
+    }
+
+    function singleSelect(li) {
+        let selected = list.querySelectorAll('.selected');
+
+        for (let i of selected) {
+            i.classList.remove('selected')
+        }
+
+        li.classList.add('selected');
+    };
+
+
+
+</script>
+
+</html>

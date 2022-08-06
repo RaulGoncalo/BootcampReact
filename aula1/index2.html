@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="utf-8">
+    <title>Manipulador por propiedade de elemento </title>
+    <meta name="description" content="Descrição da página">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+
+<body>
+    <!--Manipuladores por propriedades-->
+    <button type="button"> clique aqui</button>
+    <a>clique aqui</a>
+
+</body>
+
+<script>
+    var btn = document.querySelector('button')
+    var link = document.querySelector('a')
+
+    btn.onclick = () => {
+        window.alert("Você clicou no botão")
+    }
+
+
+    btn.onclick = () => {
+        window.alert("Você clicou no botão por propiedades")
+    }
+
+
+    link.onclick = () => {
+        window.alert("Você clicou no link por propiedades")
+    }
+</script>
+
+</html>

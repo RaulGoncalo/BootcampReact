@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="utf-8">
+    <title>Manipuladores AddEventListener</title>
+    <meta name="description" content="Descrição da página">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+
+<body>
+    <!--Manipuladores por propriedades-->
+    <button type="button"> clique aqui</button>
+    <a>clique aqui</a>
+
+</body>
+
+<script>
+    var btn = document.querySelector('button')
+    var link = document.querySelector('a')
+
+    btn.addEventListener('click', alerta)
+
+    const alerta = (e) => {
+
+        let o_event = e ? e : window.event;
+        let msg = "Posição x do mouse: " + o_event.screenX;
+
+        window.alert(msg);
+    }
+
+</script>
+
+</html>

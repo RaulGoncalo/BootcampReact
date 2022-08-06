@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <title>Aula 1.2 interface MouseEvent - click</title>
+</head>
+
+<body>
+    Exemplo mouse click
+    <button type="button">Click aqui</button>
+</body>
+
+<script>
+    let b = document.querySelector('button');
+
+
+    function showPosition(e) {
+        alert("Posição X: " + e.screenX + " Posição Y: " + e.screenY)
+    }
+
+    b.addEventListener('click', showPosition, false);
+
+</script>
+
+</html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <title>Aula 1.4 interface KeyBordEvent - combinação de teclas</title>
+</head>
+
+<body>
+    <p>Precione D e A juntos</p>
+</body>
+
+<script>
+    function runDobleKeys(func, ...codes) {
+        let pressed = new Set();
+
+        document.addEventListener('keydown', (e) => {
+            pressed.add(e.code);
+
+            for (let code of codes) {
+                if (!pressed.has(code)) {
+                    return;
+                }
+                pressed.clear();
+                func();
+            }
+        });
+
+        document.addEventListener('keyup', (e) => {
+            pressed.delete(e.code)
+        });
+
+        runDobleKeys(() => alert("Combinação das teclas"), "KeyA", "KeyD")
+    }
+
+</script>
+
+</html>

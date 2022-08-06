@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <title>Aula 1.4 interface KeyBordEvent - keydown</title>
+</head>
+
+<body>
+    <p>Exemplo de evento de input</p>
+    <br />
+
+
+    Texto: <input type="text" id="a" value="" />
+</body>
+
+<script>
+    let inp = document.getElementById("a");
+
+    inp.addEventListener('keydown', funkeyDown);
+    inp.addEventListener('keyup', funkeyUp);
+
+    function funkeyDown(e) {
+        e.target.style.background = "blue"
+    }
+
+    function funkeyUp(e) {
+        e.target.style.background = "white"
+    }
+
+</script>
+
+</html>

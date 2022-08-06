@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <title>Aula 1.5 - FocusEvent</title>
+
+    <style>
+        .invalid {
+            border-color: red;
+        }
+
+        #error {
+            color: red;
+        }
+    </style>
+</head>
+
+<body>
+    Digite seu email: <input type="email" id='input'>
+    <div id="error"></div>
+</body>
+
+<script>
+    let inp = document.getElementById('input');
+
+    inp.addEventListener("blur", funBlur);
+    inp.addEventListener("focus", funFocus);
+
+    function funBlur(e) {
+        if (!e.target.value.includes("@")) {
+            e.target.classList.add('invalid');
+            document.getElementById('error').innerHTML = "Email inválido"
+        }
+    };
+
+
+    function funFocus(e) {
+        if (e.target.classList.contains('invalid')) {
+            e.target.classList.remove('invalid');
+            document.getElementById('error').innerHTML = "";
+        }
+    };
+
+
+</script>
+
+</html>

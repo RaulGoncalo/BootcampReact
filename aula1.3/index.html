@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <title>Aula 1.2 interface MouseEvent - MouseUp e MouseDown</title>
+</head>
+
+<body>
+    Exemplo mousedown
+    <p id="a">Click aqui</p>
+</body>
+
+<script>
+    let p = document.getElementById("a");
+
+    p.addEventListener('mousedown', (e) => { e.target.innerHTML = "O mouse esta precionado" })
+
+    p.addEventListener('mouseup', (e) => { e.target.innerHTML = "O mouse não esta precionado" })
+</script>
+
+</html>
